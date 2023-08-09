@@ -48,7 +48,6 @@ pipeline {
                 sh 'kubectl apply -f train-schedule-kube-canary.yml -n jenkins-deploy'
                 }
             }
-            }
         }
     }
 }
