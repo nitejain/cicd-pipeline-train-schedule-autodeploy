@@ -45,7 +45,7 @@ pipeline {
         stage('DeployToProduction') {
             steps {
                 withKubeConfig([credentialsId: 'jenkins-deploy', serverUrl: 'https://172.31.5.104:6443']) {
-                sh 'kubectl apply -f train-schedule-kube-canary.yml -n jenkins-deploy'
+                sh 'kubectl apply -f train-schedule-kube.yml -n jenkins-deploy'
                 }
             }
         }
