@@ -6,9 +6,6 @@ pipeline {
     }
     stages {
         stage('Build') {
-            when {
-                branch 'master'
-            }
             steps {
                 echo 'Running build automation'
                 sh './gradlew build --no-daemon'
@@ -16,9 +13,6 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
-            when {
-                branch 'master'
-            }
             steps {
                 script {
                     app = docker.build(DOCKER_IMAGE_NAME)
